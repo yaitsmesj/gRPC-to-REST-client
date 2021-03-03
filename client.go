@@ -14,6 +14,7 @@ func main() {
 		log.Fatal(err)
 	}
 	defer conn.Close()
+	log.Println("Connection Created")
 
 	client := pb.NewUserServiceClient(conn)
 	user, err := client.GetUser(context.Background(), &pb.GetUserRequest{Id: 2})
